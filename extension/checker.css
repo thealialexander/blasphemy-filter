@@ -1,0 +1,201 @@
+:root {
+  inline-size: 500px;
+  overflow-x: hidden;
+  color-scheme: dark;
+  font: 14px/1.5 system-ui, sans-serif;
+  --surface: #17212c;
+  --field: #101923;
+  --text: #edf3fa;
+  --muted: #bbc8d6;
+  --border: #75869b;
+  --accent: #b1d7fc;
+  --accent-text: #102c45;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  --column-width: clamp(20px, 9.6vw, 48px);
+  inline-size: min(500px, 100vw);
+  margin: 0;
+  padding: 5px 6px 6px;
+  border: solid transparent;
+  border-width: 25px var(--column-width) 22px;
+  /* Slice around the capitals and plinths so the arch depth stays fixed as the pane grows. */
+  border-image: url("roman-frame.png") 156 184 84 fill / 40px var(--column-width) 22px stretch;
+  color: var(--text);
+  background: var(--surface);
+}
+
+main {
+  max-block-size: 540px;
+  margin: -4px;
+  padding: 4px;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.pane-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 18px;
+  margin-bottom: 12px;
+}
+
+.style-field {
+  flex-shrink: 0;
+}
+
+h2 {
+  display: block;
+  margin: 0 0 5px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+textarea, #redacted, select {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--field);
+  color: var(--text);
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 4rem;
+  max-height: 13rem;
+}
+
+select {
+  padding: 5px 8px;
+}
+
+textarea::placeholder {
+  color: var(--muted);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+button {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 11px;
+  color: var(--text);
+  background: var(--field);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+button[type="submit"] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+
+button:focus-visible, textarea:focus-visible, select:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+#status, #page-status, #edit-status {
+  margin: 10px 0 0;
+  font-weight: 600;
+  color: var(--text);
+}
+
+#status:empty, #page-status:empty, #edit-status:empty {
+  margin: 0;
+}
+
+#preview, #edit-form {
+  margin-top: 10px;
+}
+
+#hint-help {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+#redacted {
+  max-height: 10rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+#redacted [data-no-blaspheme-style] {
+  border-radius: 2px;
+}
+
+#custom {
+  margin-top: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#custom-list {
+  max-height: 10rem;
+  overflow: auto;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+#custom-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 2px;
+}
+
+.rule-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.rule-hint {
+  font-family: ui-monospace, monospace;
+}
+
+.rule-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 6px;
+}
+
+#custom-list button {
+  padding: 3px 8px;
+}

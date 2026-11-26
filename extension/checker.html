@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>NO BLASPHEMY</title>
+  <link rel="stylesheet" href="checker.css">
+  <script src="matcher.js" defer></script>
+  <script src="mask.js" defer></script>
+  <script src="custom-phrases.js" defer></script>
+  <script src="checker.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="pane-header">
+      <h1>NO BLASPHEMY</h1>
+      <div class="style-field">
+        <select id="mask-style" aria-label="Censor style" disabled>
+          <option value="blackout">Blackout</option>
+          <option value="blur">Blur</option>
+          <option value="scripture">Exodus 20:7 RSVCE</option>
+        </select>
+      </div>
+    </header>
+    <form id="checker">
+      <textarea id="sample" rows="2" aria-label="Text to check or add"
+        placeholder="Paste text to test it, or select Test to scan the page." autocomplete="off"
+        autocapitalize="off" spellcheck="false"></textarea>
+      <div class="buttons">
+        <button type="submit" disabled>Test</button>
+        <button type="button" id="add" disabled>Add phrase</button>
+      </div>
+    </form>
+    <p id="status" role="status"></p>
+    <p id="page-status" role="status"></p>
+    <section id="preview" hidden>
+      <h2>Redacted preview</h2>
+      <div id="redacted"></div>
+    </section>
+    <details id="custom" hidden>
+      <summary>Custom phrases</summary>
+      <form id="edit-form" hidden>
+        <h2 id="edit-label">Edit phrase</h2>
+        <p id="hint-help" hidden>Paste the same phrase to create a hint.</p>
+        <textarea id="replacement" rows="2" aria-label="Replacement phrase" placeholder="Paste the corrected phrase"
+          autocomplete="off" autocapitalize="off" spellcheck="false"></textarea>
+        <div class="buttons">
+          <button type="submit" id="save-replacement">Save changes</button>
+          <button type="button" id="cancel-edit">Cancel</button>
+        </div>
+        <p id="edit-status" role="status"></p>
+      </form>
+      <ul id="custom-list"></ul>
+    </details>
+  </main>
+</body>
+</html>
