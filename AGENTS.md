@@ -1,5 +1,6 @@
 # Browser extension parity
 
+- Use `thealialexander/blasphemy-filter` on GitHub as the source of truth. Fetch `origin/main` before making changes, publish approved changes there, and verify the local checkout matches it afterward. Regenerate local Safari packages when their shared inputs change and reload installed extensions when needed.
 - Treat `extension/` as the shared source for Chrome, Edge, Firefox, and Safari. Update the matcher, fingerprints, custom phrase storage, censor styles, popup, and icons there once.
 - Generate Safari resources and Xcode targets with `python3 extension/safari/prepare.py`. Keep Safari-specific manifest adjustments in that script and document their effect in `extension/safari/README.md`.
 - Keep literal expressions out of source, documentation, and committed fixtures. Use numeric fingerprints for matching and derive saved hints from partial numeric data. Keep filtering and preferences local.
