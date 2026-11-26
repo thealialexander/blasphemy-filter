@@ -5,7 +5,8 @@ Changes for NO BLASPHEMY are listed newest first. Changes awaiting a release go 
 ## Unreleased
 
 - Added Safari packaging from the shared extension source, with macOS and iPhone/iPad targets, Safari installation instructions, and platform-specific coverage notes.
-- Verified the Apple builds and shared assets. Tested mobile filtering, reveal, styles, manual rescans, and custom rules in an iPhone Simulator WebKit host. Tested initial and newly appended text, reveal, and scan counts in macOS WebKit. Desktop Safari enablement and physical iPhone or iPad installation remain unverified.
+- Verified the Apple builds and shared assets. Tested mobile filtering, reveal, styles, manual rescans, and custom rules in an iPhone Simulator WebKit host. Tested initial and newly appended text, reveal, and scan counts in macOS WebKit.
+- Verified temporary installation and site access in desktop Safari against two X pages. Documented the generated folder to select and the permission prompt behind Safari’s orange exclamation mark. Physical iPhone or iPad installation remains unverified.
 - Added contributor instructions for keeping the browser versions, docs, and release history in sync.
 
 ## 1.8.1 · 2026-11-25

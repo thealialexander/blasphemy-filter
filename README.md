@@ -24,7 +24,7 @@ Open `about:debugging#/runtime/this-firefox`, choose **Load Temporary Add-on**, 
 
 ### Safari on Mac, iPhone, and iPad
 
-The Safari build shares the same web extension source and uses one Xcode project for the Mac and mobile targets. See the [Safari README](extension/safari/README.md) for temporary Mac installation, Xcode builds, and Safari-specific coverage.
+The Safari build shares the same web extension source and uses one Xcode project for the Mac and mobile targets. On Mac, **Add Temporary Extension** takes the generated `WebExtension` folder. If the toolbar icon shows an orange exclamation mark, open it and grant access to the site you want to filter. See the [Safari README](extension/safari/README.md) for the exact folder path, permission choices, Xcode builds, and Safari-specific coverage.
 
 ## Use the filter
 
