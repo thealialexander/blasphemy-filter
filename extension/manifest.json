@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "NO BLASPHEMY",
   "version": "1.8.1",
-  "description": "Obscures common blasphemy and irreverent exclamations, with an offline text checker.",
+  "description": "Protects the faithful by obscuring blasphemous text. Works offline. Completely free.",
   "icons": {
     "16": "icons/cross-16.png",
     "32": "icons/cross-32.png",
